@@ -142,3 +142,16 @@ class JoplinAPI:
             raise Exception(f"Failed to delete tag: {response.status_code} - {response.text}")
         print(f"Deleted Tag: {tag_id}")
         return response
+
+
+    def update_tag(self, tag_id: str, tag_data: dict):
+        endpoint = f"{self.base_url}/tags/{tag_id}"
+        params = {"token": self.token}
+        body = json.dumps(tag_data)
+        headers = {"Content-Type": "application/json"}
+        response = requests.put(endpoint, params=params, data=body, headers=headers)
+
+        if response.status_code != 200:
+            raise Exception(f"Failed to update tag: {response.status_code} - {response.text}")
+        print(f"Updated Tag: {tag_id}")
+        return response

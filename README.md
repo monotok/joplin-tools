@@ -59,6 +59,10 @@ Simple tool to delete all tags in the Joplin app.
 
 Even deleting tags still leaves them behind if you do a api call to list them.
 
+## Tag Renamer
+
+Utility to rename tags, will find and replace specified characters and update the title accordingly.
+
 # Examples - Import notes from Trilium
 
 Note: There are two directories mentioned here.
